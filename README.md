@@ -35,13 +35,9 @@ export default {
     };
   },
   created() {
-    fetchNewsList()
-      .then((res) => {
-        this.users = res.data;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+     fetchNewsList()
+      .then(res => this.users = res.data)
+      .catch(err => console.log(err));
   },
 };
 ```
@@ -52,8 +48,7 @@ export default {
 # lifeCycle
 
 ## created
-  1. 인스턴스가 작성된 후 동기적으로 호출됩니다.
-  2. 부모, 자식 관계의 컴포넌트가 렌더링 될 때 mounted보다 먼저 호출되며 부모, 자식 순으로 실행합니다.
-  3. 가상돔을 건드릴 수 없습니다.($el 속성 사용 불가)
-  4.데이터 초기화 선언을 created에서 많이 합니다.
-  5. 컴포넌트 초기에 외부에서 부여받은 설정에 의해 기본 값이 변경이 필요한 경우
+  1. 컴포넌트가 생성되자마자 실행되는 로직으로 데이터를 요청할 때 사용 **
+  2. 부모, 자식 관계의 컴포넌트가 렌더링 될 때 mounted보다 먼저 호출되며 부모, 자식 순으로 실행.
+  3. 가상돔을 건드릴 수 없음 ($el 속성 사용 불가)
+ 
