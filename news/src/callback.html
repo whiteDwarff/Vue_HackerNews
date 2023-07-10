@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CallBack</title>
+</head>
+
+<body>
+  <div>jquery ajax</div>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"></script>
+  <script>
+
+    function callAjax() {
+      return new Promise(function (res, rej) {
+        $.ajax({
+          url: 'https://api.hnpwa.com/v0/news/1.json',
+          success: function (data) {
+            res(data);
+          }
+        });
+      });
+    }
+    
+    function fetchData() {
+
+      let result = [];
+
+      callAjax()
+        .then(function (data) {
+          console.log('데이터 호출 결과 : ', data);
+          result = data;
+          console.log('함수 결과 : ' + result);
+        });
+      //   $.ajax({
+      //     url: 'https://api.hnpwa.com/v0/news/1.json',
+      //     success: function (data) {
+      //       console.log('데이터 호출 결과 : ', data);
+      //       result = data;
+      //       console.log('함수 결과 : ' + result);
+      //     }
+      //   });
+      // }
+    }
+    fetchData();
+  </script>
+
+</body>
+
+</html>
+<!-- 
+  callback ?
+   - 특정시점에 종료되는 함수
+   - 함수에서 인자로 받은 함수
+
+-->

@@ -1,25 +1,23 @@
 <template>
   <div id="news">
-    <div v-for="user in users" :key="user">
-      {{ user.title }}
-    </div>
+    <p v-for="item in fetchedNews" :key="item">
+      <a :href="item.url"> {{ item.title }} </a>
+      <small>{{ item.time_ago }} by {{ item.user }}</small>
+    </p>
   </div>
 </template>
 
 <script>
-import { fetchNewsList } from "../api/index.js";
+
+import { mapGetters } from 'vuex'
 
 export default {
-  data() {
-    return {
-      users: [],
-    };
+  computed: {
+    ...mapGetters([ 'fetchedNews' ])
   },
   // 컴포넌트가 생성되자마자 실행되는 로직, 데이터를 요청할 때 사용
   created() {
-    fetchNewsList()
-      .then(res => this.users = res.data)
-      .catch(err => console.log(err));
+    this.$store.dispatch('FETCH_NEWS');
   },
 };
 </script>

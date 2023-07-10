@@ -1,25 +1,23 @@
 <template>
   <div id="ask">
-    <div v-for="ask in asks" :key="ask">
-      {{ ask.title }}
-    </div>
+      <p v-for="item in fetchedAsk" :key="item">
+      <a :href="item.url"> {{ item.title }} </a>
+      <small>{{ item.time_ago }} by {{ item.user }}</small>
+    </p>
   </div>
 </template>
 
 <script>
-import { fetchAskList } from "../api/index.js";
+
+import { mapGetters } from 'vuex'
 
 export default {
-  data() {
-    return {
-      asks: [],
-    };
+  computed: {
+    ...mapGetters([ 'fetchedAsk' ])
   },
   // 컴포넌트가 생성되자마자 실행되는 로직
   created() {
-    fetchAskList()
-      .then(res => this.asks = res.data)
-      .catch(err => console.log(err));
+    this.$store.dispatch('FETCH_ASK')
   },
 };
 </script>

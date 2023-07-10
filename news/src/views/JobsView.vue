@@ -1,24 +1,22 @@
 <template>
   <div id="jobs">
-    <div v-for="job in jobs" :key="job">
-      {{ job.title }}
-    </div>
+    <p v-for="job in fetchedJobs" :key="job">
+      <a :href="job.url">{{ job.title }}</a>
+      <small>{{ job.time_ago}}, {{ job.domain }}</small>
+    </p>
   </div>
 </template>
 
 <script>
-import { fetchJobsList } from "../api/index.js";
+import { mapGetters } from 'vuex'
+
 export default {
-  data() {
-    return {
-      jobs: [],
-    };
+  computed: {
+    ...mapGetters([ 'fetchedJobs' ])
   },
   // 컴포넌트가 생성되자마자 실행되는 로직
   created() {
-    fetchJobsList()
-      .then(res => this.jobs = res.data)
-      .catch(err => console.log(err));
+    this.$store.dispatch('FETCH_JOBS')
   },
 };
 </script>

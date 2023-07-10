@@ -24,4 +24,11 @@ export default {
   list-style: none;
   text-decoration: none;
 }
+p {
+  margin-bottom: 20px;
+}
+small {
+  display: inline-block;
+  margin-left: 10px;
+}
 </style>
