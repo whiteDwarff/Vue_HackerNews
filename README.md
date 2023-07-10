@@ -63,7 +63,7 @@ export default {
 
 
   ```ruby
-    1. src/store/index.js
+    # 1. src/store/index.js
     
     # vue3 부터는 createStore 사용
     import { createStore } from 'vuex'
@@ -74,7 +74,7 @@ export default {
         ask: [],
         jobs: [],
       },
-      // backend api를 가져와서 mutations에 넘겨주는 속성 (api를 호출) **
+      # backend api를 가져와서 mutations에 넘겨주는 속성 (api를 호출) **
       actions: {
         FETCH_NEWS(context) {
           fetchNewsList()
@@ -83,8 +83,8 @@ export default {
           .catch(err => console.log(err))
         }
       },
-      // actions에서 받은 데이터를 state에 넘겨줌
-      // mutations는 state의 상태를 관리하는 속성이다. ***
+      # actions에서 받은 데이터를 state에 넘겨줌
+      # mutations는 state의 상태를 관리하는 속성이다. ***
       mutations: {
         SET_NEWS(state, news) {
           state.news = news;
