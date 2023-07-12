@@ -1,10 +1,11 @@
 # Vue_HackerNews
 
 views 폴더의 구성엔 routing 정보가 담겨있는 컴포넌트만 들어가는게 좋다.
-(데이터를 불러오는 로직은 사용되지 않음)
+(데이터를 불러오는 로직은 사용되지 않음, 사용자에게 직접 노출되는 화면)
 
 export
 ```ruby
+# axios를 통해 데이터를 불러오는 로직
 # src > api > index.js
 
 import axios from "axios";
@@ -78,7 +79,7 @@ export default {
       actions: {
         FETCH_NEWS(context) {
           fetchNewsList()
-          // mutations의 SET_NEWS에 데이터(res.data)를 넘김
+          # mutations의 SET_NEWS에 데이터(res.data)를 넘김
           .then(res => context.commit('SET_NEWS', res.data))
           .catch(err => console.log(err))
         }
