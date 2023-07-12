@@ -33,8 +33,12 @@ export const router = createRouter({
       component: ItemView
     },
     {
-      path: '/user',
+      path: '/user/:id',
       component: UserView
+    },
+    {
+      path: '/item/:id',
+      component: ItemView
     }
   ]
 })

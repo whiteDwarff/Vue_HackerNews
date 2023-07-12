@@ -1,8 +1,10 @@
 <template>
   <div id="news">
-    <p v-for="item in fetchedNews" :key="item">
-      <a :href="item.url"> {{ item.title }} </a>
-      <small>{{ item.time_ago }} by {{ item.user }}</small>
+    <p v-for="(item, i) in fetchedNews" :key="i">
+      <a :href="item.url"> {{ i+1 }}. {{ item.title }} </a>
+      <small>{{ item.time_ago }} by 
+        <router-link :to="`/user/${item.user}`">{{item.user}}</router-link>
+      </small>
     </p>
   </div>
 </template>
