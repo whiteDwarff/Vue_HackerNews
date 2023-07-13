@@ -18,7 +18,6 @@ export default {
     }  
   },
   created() {
-    console.log(this.$route.params.id)
     const userName = this.$route.params.id
     // store의 dispatch 속성을 통해 'FETCH_USER'을 호출해 userName을 넘겨줌
     this.$store.dispatch('FETCH_USER', userName);

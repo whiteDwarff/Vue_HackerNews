@@ -12,7 +12,7 @@ export const store =  createStore({
     ask: [],
     jobs: [],
     user: {},
-    item: {},
+    item: [],
   },
   getters: {
     fetchedAsk(state) {
@@ -23,6 +23,9 @@ export const store =  createStore({
     },
     fetchedJobs(state) {
       return state.jobs;
+    },
+    fetchedItem(state){
+      return state.item;
     }
   },
   // backend api를 가져와서 mutations에 넘겨주는 속성 (api를 호출) **
