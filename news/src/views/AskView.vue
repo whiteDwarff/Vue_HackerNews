@@ -1,27 +1,17 @@
 <template>
   <div id="ask">
-      <p v-for="item in fetchedAsk" :key="item">
-      <router-link :to="`/item/${item.id}`">{{ item.title }}</router-link>
-      <small>
-        {{ item.time_ago }} by {{ item.user }}</small>
-    </p>
+    <!-- <ul class="news-list"> -->
+      <ListItem/>
+    <!-- </ul> -->
   </div>
 </template>
 
 <script>
-
-import { mapGetters } from 'vuex'
+import ListItem from "../components/ListItem.vue"
 
 export default {
-  computed: {
-    ...mapGetters([ 'fetchedAsk' ])
-  },
-  // 컴포넌트가 생성되자마자 실행되는 로직
-  created() {
-    this.$store.dispatch('FETCH_ASK')
-  },
+  components: {
+    ListItem,
+  }
 };
 </script>
-
-<style>
-</style>

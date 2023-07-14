@@ -18,15 +18,18 @@ export const router = createRouter({
       path: '/news',
       // component : url 주소로 갔을 때 표시될 컴포넌트(페이지)
       component: NewView,
+      name: 'news'
   
     },
     {
       path: '/ask',
-      component: AskView
+      component: AskView,
+      name: 'ask'
     },
     {
       path: '/jobs',
-      component: JobsView
+      component: JobsView,
+      name: 'jobs'
     },
     {
       path: '/item',

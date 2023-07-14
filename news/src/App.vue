@@ -2,7 +2,9 @@
   <div id="app">
     <!-- url 주소에 따라서 보여지는 view -->
     <ToolBar />
-    <router-view></router-view>
+    <transition name="page">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -24,11 +26,21 @@ export default {
   list-style: none;
   text-decoration: none;
 }
-p {
-  margin-bottom: 20px;
+a {
+  color: #34495e;
 }
-small {
-  display: inline-block;
-  margin-left: 10px;
+a:hover {
+  color: #42b883;
+  text-decoration: underline;
+}
+/* Router Transition */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
 }
 </style>

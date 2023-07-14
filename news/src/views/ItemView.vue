@@ -17,7 +17,7 @@
       <div v-html="fetchedItem.content"></div>
     </div>
   </section>
-
+ 
   <!-- 질문 댓글 -->
   <section id="content"></section>
 </div>
@@ -40,7 +40,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 #question {
   padding: 30px 20px 0 20px;
 }
