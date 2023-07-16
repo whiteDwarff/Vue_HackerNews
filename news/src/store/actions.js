@@ -38,5 +38,11 @@ export default {
     fetchCommentItem(id)
     .then(({ data }) => commit('SET_ITEM', data))
     .catch(err => console.log(err))
+  },
+  START_SPNNINER({ commit }) {
+    commit('S_SPNNIER')
+  },
+  END_SPNNINER({ commit }) {
+    commit('E_SPNNIER')
   }
 }

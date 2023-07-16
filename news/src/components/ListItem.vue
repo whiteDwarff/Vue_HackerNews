@@ -32,16 +32,16 @@
 
 <script>
 export default {
-  created() {
-    const name = this.$route.name;
-    if (name == "news") {
-      this.$store.dispatch("FETCH_NEWS");
-    } else if (name == "ask") {
-      this.$store.dispatch("FETCH_ASK");
-    } else if (name == "jobs") {
-      this.$store.dispatch("FETCH_JOBS");
-    }
-  },
+  // created() {
+  //   const name = this.$route.name;
+  //   if (name == "news") {
+  //     this.$store.dispatch("FETCH_NEWS");
+  //   } else if (name == "ask") {
+  //     this.$store.dispatch("FETCH_ASK");
+  //   } else if (name == "jobs") {
+  //     this.$store.dispatch("FETCH_JOBS");
+  //   }
+  // },
   // computed 속성엔 무조건 return이 포함되어야 한다.
   computed: {
     listItems() {

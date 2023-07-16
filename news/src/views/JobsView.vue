@@ -1,8 +1,6 @@
 <template>
   <div id="jobs">
-  <!-- <ul class="news-list"> -->
-    <ListItem/>
-  <!-- </ul> -->
+    <ListItem />
   </div>
 </template>
 
@@ -10,7 +8,9 @@
 import ListItem from "../components/ListItem.vue"
 
 export default {
-
+  created() {
+    this.$store.dispatch('FETCH_JOBS');
+  },
   components: {
     ListItem
   }

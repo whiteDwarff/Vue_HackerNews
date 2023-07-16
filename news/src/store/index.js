@@ -1,6 +1,5 @@
 import { createStore } from 'vuex'
 
-
 // mutations 
 import mutations from "./mutations.js"
 import actions from "./actions.js"
@@ -12,7 +11,8 @@ export const store = createStore({
     ask: [],
     jobs: [],
     user: {},
-    item: [],
+    item: {},
+    loadingStatus: false
   },
   getters: {
     fetchedAsk(state) {

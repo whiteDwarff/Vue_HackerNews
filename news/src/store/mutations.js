@@ -13,5 +13,11 @@ export default {
   },
   SET_ITEM(state, item) {
     state.item = item
+  },
+  S_SPNNIER(state) {
+    state.loadingStatus = true
+  },
+  E_SPNNIER(state) {
+    state.loadingStatus = false
   }
 }

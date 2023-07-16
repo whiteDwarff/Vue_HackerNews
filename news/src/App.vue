@@ -1,19 +1,44 @@
 <template>
-  <div id="app">
-    <!-- url 주소에 따라서 보여지는 view -->
+    <div id="app">
     <ToolBar />
-    <transition name="page">
+    <!-- <transition name="page">
       <router-view></router-view>
-    </transition>
+    </transition> -->
+    <router-view v-slot="{ Component }">
+      <transition name="page">
+        <component :is="Component" />
+      </transition>
+    </router-view>
+    <SpinnerView :loading="true" />
   </div>
 </template>
 
 <script>
 import ToolBar from "./components/HeaderToolBar.vue";
+import SpinnerView from "./components/SpinnerView.vue";
+// import bus from "./utils/bus.js"
 export default {
   name: "App",
+  // data() {
+  //   return {
+  //     loadingStatus: false,
+  //   }
+  // },
+  // methods: {
+  //   startSpinner() {
+  //     this.loadingStatus = true
+  //   },
+  //   endSpinner() {
+  //     this.loadingStatus = false
+  //   }
+  // },
+  // created() {
+  //   bus.$on('start:spnnier', () => this.startSpinner);
+  //   bus.$on('end:spnnier', () => this.endSpinner);
+  // },
   components: {
     ToolBar,
+    SpinnerView,
   },
 };
 </script>
@@ -36,7 +61,7 @@ a:hover {
 /* Router Transition */
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .page-enter-from,
