@@ -5,6 +5,7 @@ import {
   fetchJobsList,
   fetchUserInfo,
   fetchCommentItem,
+  fetchList
 } from "../api/index.js";
 
 
@@ -15,17 +16,26 @@ export default {
     // /src/api/index.js에 정의된 함수를 import하여 사용
     fetchNewsList()
     // mutations의 SET_NEWS에 데이터(res.data)를 넘김
-    .then(res => context.commit('SET_NEWS', res.data))
+    .then(res => {
+      context.commit('SET_NEWS', res.data)
+      return res
+    })
     .catch(err => console.log(err))
   },
   FETCH_ASK({ commit }) {
     fetchAskList()
-    .then(({ data }) => commit('SET_ASK', data))
+    .then(({ data }) => {
+      commit('SET_ASK', data)
+      return data
+    })
     .catch(err => console.log(err))
   },
   FETCH_JOBS({ commit }) {
     fetchJobsList() 
-    .then(({ data }) => commit('SET_JOBS', data))
+    .then(({ data }) => {
+      commit('SET_JOBS', data)
+      return data
+    })
     .catch(err => console.log(err))
   },
   // name은 UserView에서 함수 호출 시 넘겨받은 유저의 정보
@@ -39,10 +49,19 @@ export default {
     .then(({ data }) => commit('SET_ITEM', data))
     .catch(err => console.log(err))
   },
-  START_SPNNINER({ commit }) {
-    commit('S_SPNNIER')
+  // spinner 이벤트 제어
+  START_SPINNER({ commit }) {
+    commit('START_SPINNER')
   },
-  END_SPNNINER({ commit }) {
-    commit('E_SPNNIER')
+  END_SPINNER({ commit }) {
+    commit('END_SPINNER')
+  },
+  // HighOrderComponent
+  FETCH_LIST({ commit }, pageName) {
+    fetchList(pageName) 
+      .then(({data}) => {
+        commit('SET_LIST', data)
+      })
+      .catch(err => console.log(err)) 
   }
 }

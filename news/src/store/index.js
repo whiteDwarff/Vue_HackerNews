@@ -12,7 +12,8 @@ export const store = createStore({
     jobs: [],
     user: {},
     item: {},
-    loadingStatus: false
+    loadingStatus: false,
+    list: []
   },
   getters: {
     fetchedAsk(state) {

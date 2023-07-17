@@ -4,6 +4,12 @@ import axios from "axios";
 const config = {
   baseUrl: "https://api.hnpwa.com/v0/"
 };
+
+// HighOrderComponent
+function fetchList(pageName) {
+  return axios.get(`${config.baseUrl}${pageName}/1.json`)
+}
+
 // 2. API 함수들을 정리
 function fetchNewsList() {
   return axios.get(`${config.baseUrl}news/1.json`)
@@ -21,10 +27,12 @@ function fetchCommentItem(id) {
   return axios.get(`${config.baseUrl}item/${id}.json`)
 }
 
+
 export {
   fetchNewsList,
   fetchJobsList,
   fetchAskList,
   fetchUserInfo,
-  fetchCommentItem
+  fetchCommentItem,
+  fetchList
 }

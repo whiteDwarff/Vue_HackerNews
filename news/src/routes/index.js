@@ -1,9 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
-import AskView from "@/views/AskView.vue"
-import JobsView from "@/views/JobsView.vue"
-import NewView from "@/views/NewsView.vue"
 import ItemView from "@/views/ItemView.vue"
 import UserView from "@/views/UserView.vue"
+import createListView from "@/views/CreateListView.js"
 
 export const router = createRouter({
   history: createWebHistory(),
@@ -17,18 +15,20 @@ export const router = createRouter({
       // path : url 주소
       path: '/news',
       // component : url 주소로 갔을 때 표시될 컴포넌트(페이지)
-      component: NewView,
+      // HighOrderComponent
+      // component의 이름은 'NewsView'가 된다.
+      component: createListView('NewsView'),
       name: 'news'
   
     },
     {
       path: '/ask',
-      component: AskView,
+      component: createListView('AskView'),
       name: 'ask'
     },
     {
       path: '/jobs',
-      component: JobsView,
+      component: createListView('JobsView'),
       name: 'jobs'
     },
     {

@@ -10,7 +10,7 @@
           </router-link>
         </template>
         <template #time>
-          <small class="time">{{'posted : '+ fetchedItem.time_ago }}</small>
+          <small class="time">{{ 'posted : '+ fetchedItem.time_ago }}</small>
         </template>
       </UserProfile>
   </section>

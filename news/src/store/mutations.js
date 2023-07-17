@@ -14,10 +14,14 @@ export default {
   SET_ITEM(state, item) {
     state.item = item
   },
-  S_SPNNIER(state) {
+  START_SPINNER(state) {
     state.loadingStatus = true
   },
-  E_SPNNIER(state) {
+  END_SPINNER(state) {
     state.loadingStatus = false
+  },
+  // HighOrderComponent
+  SET_LIST(state, list) {
+    state.list = list
   }
 }

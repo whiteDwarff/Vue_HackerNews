@@ -32,29 +32,10 @@
 
 <script>
 export default {
-  // created() {
-  //   const name = this.$route.name;
-  //   if (name == "news") {
-  //     this.$store.dispatch("FETCH_NEWS");
-  //   } else if (name == "ask") {
-  //     this.$store.dispatch("FETCH_ASK");
-  //   } else if (name == "jobs") {
-  //     this.$store.dispatch("FETCH_JOBS");
-  //   }
-  // },
-  // computed 속성엔 무조건 return이 포함되어야 한다.
   computed: {
     listItems() {
-      const name = this.$route.name;
-      if (name === "news") {
-        return this.$store.state.news;
-      } else if (name === "ask") {
-        return this.$store.state.ask;
-      } else if (name === "jobs") {
-        return this.$store.state.jobs;
-      }
-      return [];
-    },
+      return this.$store.state.list;
+    }
   },
 };
 </script>
