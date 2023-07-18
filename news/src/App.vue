@@ -16,26 +16,9 @@
 <script>
 import ToolBar from "./components/HeaderToolBar.vue";
 import SpinnerView from "./components/SpinnerView.vue";
-// import bus from "./utils/bus.js"
+
 export default {
   name: "App",
-  // data() {
-  //   return {
-  //     loadingStatus: false,
-  //   }
-  // },
-  // methods: {
-  //   startSpinner() {
-  //     this.loadingStatus = true
-  //   },
-  //   endSpinner() {
-  //     this.loadingStatus = false
-  //   }
-  // },
-  // created() {
-  //   bus.$on('start:spnnier', () => this.startSpinner);
-  //   bus.$on('end:spnnier', () => this.endSpinner);
-  // },
   components: {
     ToolBar,
     SpinnerView,

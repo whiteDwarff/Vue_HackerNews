@@ -57,6 +57,7 @@ export default {
     commit('END_SPINNER')
   },
   // HighOrderComponent
+  // pageName에는 route의 name 속성으로 다른 axios 요청을 담당
   FETCH_LIST({ commit }, pageName) {
     fetchList(pageName) 
       .then(({data}) => {
