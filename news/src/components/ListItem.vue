@@ -1,7 +1,7 @@
 <template>
   <div>
     <li v-for="(item, i) in listItems" :key="i" class="post">
-      <!-- Numbering -->
+      <!-- Numbering, item.porint가 있다면 렌더링 / 없다면 index -->
       <span class="points">{{ item.points || i + 1 }}</span>
       <div>
         <p class="news-title">
@@ -12,7 +12,7 @@
           <!-- Ask View -->
           <template v-else>
             <router-link :to="`/item/${item.id}`">{{ item.title }}</router-link>
-          </template>
+          </template> 
         </p>
         <small class="link-text" >
           {{ item.time_ago }} by

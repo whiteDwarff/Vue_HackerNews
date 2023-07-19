@@ -14,7 +14,7 @@ export default {
   // commit는 state의 속성에 접근하기 위해 mutations로 보내는 함수
   FETCH_NEWS(context) {
     // /src/api/index.js에 정의된 함수를 import하여 사용
-    fetchNewsList()
+    return fetchNewsList()
     // mutations의 SET_NEWS에 데이터(res.data)를 넘김
     .then(res => {
       context.commit('SET_NEWS', res.data)
@@ -23,7 +23,7 @@ export default {
     .catch(err => console.log(err))
   },
   FETCH_ASK({ commit }) {
-    fetchAskList()
+    return fetchAskList()
     .then(({ data }) => {
       commit('SET_ASK', data)
       return data
@@ -31,7 +31,7 @@ export default {
     .catch(err => console.log(err))
   },
   FETCH_JOBS({ commit }) {
-    fetchJobsList() 
+    return fetchJobsList() 
     .then(({ data }) => {
       commit('SET_JOBS', data)
       return data
@@ -40,12 +40,12 @@ export default {
   },
   // name은 UserView에서 함수 호출 시 넘겨받은 유저의 정보
   FETCH_USER({ commit }, name) {
-    fetchUserInfo(name)
+    return fetchUserInfo(name)
     .then(({ data }) => commit('SET_USER', data))
     .catch(err => console.log(err));
   },
   FETCH_ITEM({ commit }, id) {
-    fetchCommentItem(id)
+    return fetchCommentItem(id)
     .then(({ data }) => commit('SET_ITEM', data))
     .catch(err => console.log(err))
   },
@@ -59,9 +59,10 @@ export default {
   // HighOrderComponent
   // pageName에는 route의 name 속성으로 다른 axios 요청을 담당
   FETCH_LIST({ commit }, pageName) {
-    fetchList(pageName) 
-      .then(({data}) => {
-        commit('SET_LIST', data)
+    return fetchList(pageName) 
+      .then( res => {
+        commit('SET_LIST', res.data)
+        return res
       })
       .catch(err => console.log(err)) 
   }
