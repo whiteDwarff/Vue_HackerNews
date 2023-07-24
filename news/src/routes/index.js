@@ -28,10 +28,8 @@ export const router = createRouter({
       // from : 현재위치, next: function
       beforeEnter: (to, from, next) => {
         store.dispatch('FETCH_LIST', to.name)
-        .then(() => {
-          store.dispatch('END_SPINNER'); // 스피너 종료
-          next(); // 데이터를 가져온 후 페이지 이동
-        })
+        // 데이터를 가져온 후 페이지 이동
+        .then( () => next())
         .catch(err => console.log(err));
         store.dispatch('START_SPINNER'); // 스피너 시작
       },
@@ -42,11 +40,7 @@ export const router = createRouter({
       component: AskView,
       beforeEnter: (to, from, next) => {
         store.dispatch('FETCH_LIST', to.name)
-          .then( () => {
-            store.dispatch('END_SPINNER')
-            // next()가 선언되야 페이지 이동 가능
-            next();
-          })
+          .then( () => next())
           .catch( err => console.log(err))
         store.dispatch('START_SPINNER')
       }
@@ -58,11 +52,7 @@ export const router = createRouter({
       component: JobsView,
       beforeEnter: (to, from, next) => {
         store.dispatch('FETCH_LIST', to.name)
-          .then( () => {
-            store.dispatch('END_SPINNER')
-            // next()가 선언되야 페이지 이동 가능
-            next();
-          })
+          .then( () => next())
           .catch( err => console.log(err))
         store.dispatch('START_SPINNER')
       }
