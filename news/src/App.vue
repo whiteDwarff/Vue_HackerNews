@@ -17,6 +17,7 @@
 import ToolBar from "./components/HeaderToolBar.vue";
 import SpinnerView from "./components/SpinnerView.vue";
 
+
 export default {
   name: "App",
   components: {

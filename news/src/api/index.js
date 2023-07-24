@@ -5,25 +5,44 @@ const config = {
   baseUrl: "https://api.hnpwa.com/v0/"
 };
 
-// HighOrderComponent
-function fetchList(pageName) {
-  return axios.get(`${config.baseUrl}${pageName}/1.json`)
+// 공통된 기능들을 하나의 함수로 정의
+async function fetchList(pageName) {
+  try {
+    return await axios.get(`${config.baseUrl}${pageName}/1.json`)
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 // 2. API 함수들을 정리
-function fetchNewsList() {
-  return axios.get(`${config.baseUrl}news/1.json`)
+async function fetchNewsList() {
+  try {
+    return await axios.get(`${config.baseUrl}news/1.json`);
+  } catch (err) {
+    console.log(err);
+  }
 }
-function fetchJobsList() {
-  return axios.get(`${config.baseUrl}jobs/1.json`)
+async function fetchJobsList() {
+  try {
+    let response = await axios.get(`${config.baseUrl}jobs/1.json`);
+    return response;
+  } catch (err) {
+    console.log(err);
+  }
 }
-function fetchAskList() {
-  return axios.get(`${config.baseUrl}ask/1.json`)
+async function fetchAskList() {
+  try {
+    return await axios.get(`${config.baseUrl}ask/1.json`);
+  } catch (err) {
+    console.log(err);
+  }
 }
-function fetchUserInfo(username) {
-  return axios.get(`${config.baseUrl}user/${username}.json`)
+async function fetchUserInfo(username) {
+  try {
+    return await axios.get(`${config.baseUrl}user/${username}.json`)
+  } catch (err) { console.log(err); }
 }
-function fetchCommentItem(id) {
+async function fetchCommentItem(id) {
   return axios.get(`${config.baseUrl}item/${id}.json`)
 }
 

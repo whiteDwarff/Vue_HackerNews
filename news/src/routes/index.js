@@ -30,7 +30,7 @@ export const router = createRouter({
         store.dispatch('FETCH_LIST', to.name)
         // 데이터를 가져온 후 페이지 이동
         .then( () => next())
-        .catch(err => console.log(err));
+        .catch( err => console.log(err));
         store.dispatch('START_SPINNER'); // 스피너 시작
       },
     },

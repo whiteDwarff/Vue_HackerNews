@@ -10,39 +10,38 @@ import {
 
 
 export default {
+  // 공통된 기능들을 하나의 함수로 정의
+  // pageName에는 route의 name 속성으로 다른 axios 요청을 담당
+  async FETCH_LIST({ commit }, pageName) {
+    let response = await fetchList(pageName);
+    commit('SET_LIST', response.data);
+    return response;
+  },
+  
   // store의 method는 대문자로!!
   // commit는 state의 속성에 접근하기 위해 mutations로 보내는 함수
-  FETCH_NEWS(context) {
+  async FETCH_NEWS(context) {
     // /src/api/index.js에 정의된 함수를 import하여 사용
-    return fetchNewsList()
+    let response = await fetchNewsList()
     // mutations의 SET_NEWS에 데이터(res.data)를 넘김
-    .then(res => {
-      context.commit('SET_NEWS', res.data)
-      return res
-    })
-    .catch(err => console.log(err))
+    context.commit('SET_NEWS', response.data);
+    return response;
   },
-  FETCH_ASK({ commit }) {
-    return fetchAskList()
-    .then(({ data }) => {
-      commit('SET_ASK', data)
-      return data
-    })
-    .catch(err => console.log(err))
+  async FETCH_ASK({ commit }) {
+    let response = await fetchAskList();
+    commit('SET_NEWS', response.data);
+    return response;
   },
-  FETCH_JOBS({ commit }) {
-    return fetchJobsList() 
-    .then(({ data }) => {
-      commit('SET_JOBS', data)
-      return data
-    })
-    .catch(err => console.log(err))
+  async FETCH_JOBS({ commit }) {
+    let response = await fetchJobsList() 
+    commit('SET_JOBS', response.data)
+    return response;
   },
   // name은 UserView에서 함수 호출 시 넘겨받은 유저의 정보
-  FETCH_USER({ commit }, name) {
-    return fetchUserInfo(name)
-    .then(({ data }) => commit('SET_USER', data))
-    .catch(err => console.log(err));
+  async FETCH_USER({ commit }, name) {
+    let response =  fetchUserInfo(name)
+    commit('SET_USER', response.data);
+    return response;
   },
   FETCH_ITEM({ commit }, id) {
     return fetchCommentItem(id)
@@ -56,14 +55,5 @@ export default {
   END_SPINNER({ commit }) {
     commit('END_SPINNER')
   },
-  // HighOrderComponent
-  // pageName에는 route의 name 속성으로 다른 axios 요청을 담당
-  FETCH_LIST({ commit }, pageName) {
-    return fetchList(pageName) 
-      .then( res => {
-        commit('SET_LIST', res.data)
-        return res
-      })
-      .catch(err => console.log(err)) 
-  }
+
 }
