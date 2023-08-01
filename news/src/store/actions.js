@@ -39,7 +39,7 @@ export default {
   },
   // name은 UserView에서 함수 호출 시 넘겨받은 유저의 정보
   async FETCH_USER({ commit }, name) {
-    let response =  fetchUserInfo(name)
+    let response =  await fetchUserInfo(name)
     commit('SET_USER', response.data);
     return response;
   },

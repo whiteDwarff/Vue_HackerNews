@@ -1,0 +1,24 @@
+CLI로 생성한 프로젝트 배포하기
+
+1. 배포 명령어
+  npm run build
+  
+  - root 폴더 내 dist 폴더가 생성됨
+  - 정적인 자원들이 생성(html, css, js)
+  - package.json 내
+      "build": "vue-cli-service build", 추가됨
+
+2. https://www.netlify.com/ 접속 후 git login
+  2-1 add site
+  2-2 build command : npm run build
+  2-3 publish directory : dist
+  2-4 base directory : root directory 
+
+3. https://cli.vuejs.org/guide/deployment.html#netlify 접속
+  1. netlify 찾기
+  서버에 route정보 (path) 설정 **
+  || 
+  2. root/public/_redirects 생성  후 
+  # Netlify settings for single-page application
+  /*    /index.html   200
+  붙여 넣기 저장
