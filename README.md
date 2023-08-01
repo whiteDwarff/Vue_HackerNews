@@ -1,18 +1,40 @@
-![header](https://capsule-render.vercel.app/api?type=waving&color=timeGradient&text=API%20를%20사용한%20Vue-Hacker-News%20구현📰
-&animation=twinkling&fontSize=23&fontAlignY=40&fontAlign=70&height=250&width=1325&align=center)
+![header](https://capsule-render.vercel.app/api?type=waving&color=timeGradient&text=API를%20사용하여%Vue-Hacker-News%20구현📰&animation=twinkling&fontSize=23&fontAlignY=40&fontAlign=70&height=250&width=1325&align=center)
 <br>
 <br>
  <div align="center">
-  <img src="https://img.shields.io/badge/AndroidStudio-3DDC84?style=flat&logo=android&logoColor=white"/>
-  <img src="https://img.shields.io/badge/ChatGpt-412991?style=flat&logo=openai&logoColor=white"/>
-  <img src="https://img.shields.io/badge/OpenAPI-6BA539?style=flat&logo=openapiinitiative&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=flat&logo= vuedotjs&logoColor=#fff"/>
+  <img src="https://img.shields.io/badge/axios-412991?style=flat&logo=axios&logoColor=#5A29E4"/>
+  <img src="https://img.shields.io/badge/html5-E34F26?style=flat&logo=html5&logoColor=white"/>
+   <img src="https://img.shields.io/badge/css-1572B6?style=flat&logo=css3&logoColor=#fff"/>
+     <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=javascript&logoColor=white"/>
 </div>
 <br>
 <br>
 <br>
 
+<div align="center"">
+🔗 [VueHackerNews-URL 바로가기]  (https://velvety-duckanoo-58de5e.netlify.app/news)
+</div>
+<br>
+<br>
+<br>
 
-[URL](https://velvety-duckanoo-58de5e.netlify.app/news)
+## 기술스택
+**1. vue3.0**<br>
+>*vue create hacker-news*<br>
+
+**2. vuex**<br>
+>*npm install vuex@next*
+>*npm install vue-router@4*
+**3. router**<br>
+>
+
+**4. axios npm i axios**<br>
+>*npm i axios*
+<br>
+<br>
+<br>
+
 # Vue_HackerNews
 
 views 폴더의 구성엔 routing 정보가 담겨있는 컴포넌트만 들어가는게 좋다.
