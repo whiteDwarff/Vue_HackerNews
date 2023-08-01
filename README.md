@@ -1,3 +1,7 @@
+
+
+
+[URL](https://velvety-duckanoo-58de5e.netlify.app/news)
 # Vue_HackerNews
 
 views 폴더의 구성엔 routing 정보가 담겨있는 컴포넌트만 들어가는게 좋다.
