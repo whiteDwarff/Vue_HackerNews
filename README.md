@@ -20,7 +20,7 @@
 <br>
 
 ## Tech
-**1. vue3.0**<br>
+**1. vue2.0**<br>
 >*vue create hacker-news*<br>
 
 **2. vuex**<br>
