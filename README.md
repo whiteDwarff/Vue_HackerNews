@@ -29,7 +29,7 @@
 **3. router**<br>
 >*npm install vue-router@4*
 
-**4. axios npm i axios**<br>
+**4. axios **<br>
 >*npm install axios*
 
 <br>
