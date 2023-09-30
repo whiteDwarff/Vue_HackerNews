@@ -45,14 +45,13 @@
 | Jobs | https://api.hnpwa.com/v0/jobs/1.json |
 
 <br>
-<br>
 
 ## 💿 Vuex Info
 | Name | State |
 | --- | --- |
 | store | news |
-|  "    | ask  |
-|  "    | jobs  |
-|  "    | user |
-|  "    | item  |
-|  "    | list  |
+|  store | ask  |
+|  store | jobs  |
+|  store | user |
+|  store | item  |
+|  store | list  |
