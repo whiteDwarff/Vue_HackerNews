@@ -7,7 +7,7 @@
         <p class="news-title">
           <!-- News View -->
           <template v-if="item.domain">
-            <a :href="item.url">{{ item.title }}</a>
+            <a :href="item.url" target="_blank">{{ item.title }}</a>
           </template>
           <!-- Ask View -->
           <template v-else>

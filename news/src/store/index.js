@@ -7,9 +7,6 @@ import actions from "./actions.js"
 // vue3에선 createStroe로 vuex를 불러와야함
 export const store = createStore({
   state: {
-    news: [],
-    ask: [],
-    jobs: [],
     user: {},
     item: {},
     loadingStatus: false,
