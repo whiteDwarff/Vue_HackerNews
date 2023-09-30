@@ -29,7 +29,7 @@
 **3. router**<br>
 >*npm install vue-router@4*
 
-**4. axios **<br>
+**4. axios**<br>
 >*npm install axios*
 
 <br>
@@ -49,9 +49,47 @@
 ## 💿 Vuex Info
 | Name | State |
 | --- | --- |
-| store | news |
-|  store | ask  |
-|  store | jobs  |
 |  store | user |
 |  store | item  |
 |  store | list  |
+
+<br>
+
+## 🖥️ Views
+
+>*nav의 menu를 클릭 시 axios를 통해 데이터가 호출되며 vuex의 list가 갱신됩니다.*
+
+**1.News**<br> 
+  - 프로젝트의 메인화면 입니다.  
+  - 각 행의 타이틀을 클릭 시 외부 페이지에 연결됩니다.
+<img width="1441" alt="news" src="https://github.com/whiteDwarff/Vue_HackerNews/assets/115057117/a58f096c-3e80-4e94-a876-ca7375d71868">
+<img width="1446" alt="newsLink" src="https://github.com/whiteDwarff/Vue_HackerNews/assets/115057117/eae65893-02d9-43b7-b6ca-27dfef1cb529">
+
+<br>
+
+**2. Ask**<br> 
+  - 사용자들의 소통공간 입니다.
+  - 타이틀을 클릭하면 사용자의 질문을 확인할 수 있습니다.
+  - vuex의 item이 갱신됩니다.
+<img width="1453" alt="ask" src="https://github.com/whiteDwarff/Vue_HackerNews/assets/115057117/4ef59bfe-c580-4a0a-9350-85f558fbf6ff">
+<img width="1470" alt="askItem" src="https://github.com/whiteDwarff/Vue_HackerNews/assets/115057117/e14e91c2-e2ab-4ebb-a832-424e47cdeba4">
+
+<br>
+
+
+**3. Jobs**<br> 
+  - 다양한 직업 정보를 확인할 수 있습니다.
+<img width="1461" alt="jobs" src="https://github.com/whiteDwarff/Vue_HackerNews/assets/115057117/1144a9e1-62b8-471e-ab9c-b365e6cae073">
+
+<br>
+<br>
+  - 타이틀을 클릭 시 상세 정보를 확인할 수 있습니다.
+<img width="1442" alt="jobs-item" src="https://github.com/whiteDwarff/Vue_HackerNews/assets/115057117/0792e931-3b6b-44a2-a21b-b87730e0c5dd">
+
+<br>
+<br>
+
+  - 타이틀의 속성에 domain이 있다면 외부 링크로 연결됩니다.
+<img width="1222" alt="jobs-link" src="https://github.com/whiteDwarff/Vue_HackerNews/assets/115057117/fcad4f8e-775f-47ab-84f2-16942f7fb43d">
+
+
