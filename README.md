@@ -35,7 +35,7 @@
 <br>
 <br>
 
-## Item feeds
+## 🔗 Item feeds
 
 | Name | URL |
 | --- | --- |
@@ -44,6 +44,15 @@
 | Ask | https://api.hnpwa.com/v0/ask/1.json |
 | Jobs | https://api.hnpwa.com/v0/jobs/1.json |
 
+<br>
+<br>
 
-<br>
-<br>
+## 💿 Vuex Info
+| Name | State |
+| --- | --- |
+| store | news |
+|  "    | ask  |
+|  "    | jobs  |
+|  "    | user |
+|  "    | item  |
+|  "    | list  |
